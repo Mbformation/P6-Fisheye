@@ -1,15 +1,8 @@
-async function getPhotographers() {
-  return fetch("/data/photographers.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const photographers = data.photographers;
-      return { photographers };
-    });
-}
+import photographerTemplate from "../templates/photographer.js";
+import getData from "../templates/getData.js";
 
 async function displayData(photographers) {
-  const photographersSection = document.querySelector(".photographer_section");
-
+  const photographersSection = document.querySelector(".photographers_section");
   photographers.forEach((photographer) => {
     const photographerModel = photographerTemplate(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
@@ -18,7 +11,7 @@ async function displayData(photographers) {
 }
 
 async function init() {
-  const { photographers } = await getPhotographers();
+  const { photographers } = await getData();
   displayData(photographers);
 }
 
