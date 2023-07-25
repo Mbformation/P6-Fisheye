@@ -2,10 +2,21 @@
     display: none;
 }
 
-.photograph-header {
+.photographer_section {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.photographer_section p {
+    display: flex;
+    flex-direction: column;
+}
+
+.photographer_section img {
+    border-radius: 50%;
 }
 
 .contact_button {
@@ -19,6 +30,23 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.portfolio_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio_section figure img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.portfolio_section figure video {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
 }
 
 .modal {

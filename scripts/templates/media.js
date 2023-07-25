@@ -4,7 +4,8 @@ function mediaTemplate(work) {
   const fileName = properties[3];
   const fileType = fileName.split(".").pop().toLowerCase();
   const picture = `assets/photographers/${photographerId}/${fileName}`;
-  function getMediaCard() {
+
+  function getMediaForPortfolio() {
     const mediaCardContainer = document.createElement("figure");
     switch (fileType) {
       case "jpg":
@@ -14,14 +15,16 @@ function mediaTemplate(work) {
         mediaCardContainer.innerHTML = `<img src="${picture}"/> <h2>${title}</h2>`;
         break;
       case "mp4":
-        mediaCardContainer.innerHTML = `<video src="${picture}" controls> </video> <h2>${title}</h2>`;
+        mediaCardContainer.innerHTML = `<video src="${picture}"</video> <h2>${title}</h2>`;
         break;
       default:
         break;
     }
     return mediaCardContainer;
   }
-  return { getMediaCard };
+  function getMediaForLightbox() {}
+
+  return { getMediaForPortfolio, getMediaForLightbox };
 }
 
 export default mediaTemplate;
