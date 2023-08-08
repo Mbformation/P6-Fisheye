@@ -1,35 +1,54 @@
 import photographerHeader from "../templates/photographer/photographerHeader.js";
-import mediaTemplate from "../templates/media.js";
+import getPortfolioCard from "../templates/media/portfolioCard.js";
+import getStickyFooter from "../templates/stickyFooter.js";
 import getData from "../utils/getData.js";
-import getId from "../utils/getId.js";
+import getUrlId from "../utils/getUrlId.js";
+import listenToSortBtn from "../templates/sortButton.js";
 
 async function displayPhotographer(photographers) {
-  const photographerSection = document.querySelector(".photographer_section");
-  const id = getId();
+  const photographerWrapper = document.querySelector(".wrapper");
+  const id = getUrlId();
   const photographer = photographers.find((p) => p.id == parseInt(id));
-  const { container, btnElement, imgElement } =
-    photographerHeader(photographer);
-  photographerSection.appendChild(container);
-  photographerSection.appendChild(btnElement);
-  photographerSection.appendChild(imgElement);
+  const { textContainer, container } = photographerHeader(photographer);
+  photographerWrapper.appendChild(textContainer);
+  photographerWrapper.appendChild(container);
+}
+
+async function displaySortBtn(media) {
+  const id = getUrlId();
+  const portfolio = media.filter((p) => p.photographerId == parseInt(id));
 }
 
 async function displayMedia(media) {
-  const id = getId();
+  const id = getUrlId();
   const portfolio = media.filter((p) => p.photographerId == parseInt(id));
   const portfolioSection = document.querySelector(".portfolio_section");
   portfolio.forEach((work) => {
-    const mediaModel = mediaTemplate(work);
-    const mediaCard = mediaModel.getMediaForPortfolio();
+    const mediaCard = getPortfolioCard(work);
     portfolioSection.appendChild(mediaCard);
   });
 }
 
+async function displayStickyFooter(photographers, media) {
+  const id = getUrlId();
+  const photographer = photographers.find((p) => p.id == parseInt(id));
+  const portfolio = media.filter((p) => p.photographerId == parseInt(id));
+  const { totalLikesElement, priceElement } = getStickyFooter(
+    photographer,
+    portfolio
+  );
+  const stickyFooterElement = document.querySelector(".sticky_footer");
+  stickyFooterElement.appendChild(totalLikesElement);
+  stickyFooterElement.appendChild(priceElement);
+}
+
 async function init() {
-  const { photographers } = await getData();
+  const { photographers, media } = await getData();
   displayPhotographer(photographers);
-  const { media } = await getData();
+  displaySortBtn(media);
+  listenToSortBtn();
   displayMedia(media);
+  displayStickyFooter(photographers, media);
 }
 
 init();

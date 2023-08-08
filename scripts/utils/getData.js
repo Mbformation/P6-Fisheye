@@ -1,4 +1,4 @@
-export async function getData() {
+async function getData() {
   return fetch("/data/photographers.json")
     .then((response) => response.json())
     .then((data) => {
