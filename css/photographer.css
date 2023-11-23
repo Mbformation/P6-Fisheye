@@ -290,6 +290,10 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .modal header {
@@ -302,7 +306,7 @@
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 55px;
     font-weight: normal;
     text-align: center;
 }
@@ -316,7 +320,7 @@ form {
 
 form label {
     color: #312E2E;
-    font-size: 36px;
+    font-size: 25px;
 }
 
 form div {

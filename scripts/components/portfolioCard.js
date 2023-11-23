@@ -1,7 +1,7 @@
 function getPortfolioCard(work) {
   const { photographerId, title, likes } = work;
-  const propertyValues = Object.values(work);
-  const fileName = propertyValues[3];
+  const propertyValues = Object.values(work); // revoir
+  const fileName = propertyValues[3]; // revoir
   const picture = `assets/photographers/${photographerId}/${fileName}`;
   const hasVideo = "video" in work;
   const mediaCardContainer = document.createElement("figure");

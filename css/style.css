@@ -27,7 +27,7 @@ h1 {
     padding-left: 50px;
 }
 
-.photographers_section {
+.photographers .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
@@ -35,7 +35,7 @@ h1 {
     margin-bottom: 100px;
 }
 
-.photographers_section article a {
+.photographers article a {
     justify-self: center;
     display: flex;
     justify-content: center;
@@ -45,19 +45,19 @@ h1 {
 
 }
 
-.photographers_section article h2 {
+.photographers article h2 {
     color: #D3573C;
     font-size: 36px;
     margin-bottom: 0;
 }
 
-.photographers_section article img {
+.photographers article img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
 }
 
-.photographers_section article p {
+.photographers article p {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,20 +65,20 @@ h1 {
     margin-bottom: 0;
 }
 
-.photographers_section article span {
+.photographers article span {
     margin-bottom: 5px;
 }
 
-.photographers_section .location {
+.photographers .location {
     color: #901C1C;
     font-size: 19px;
 }
 
-.photographers_section .moto {
+.photographers .moto {
     font-size: 16px;
 }
 
-.photographers_section .price {
+.photographers .price {
     color: #757575;
     font-size: 15px;
 }
