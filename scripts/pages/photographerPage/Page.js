@@ -1,25 +1,12 @@
 import Header from "./../../components/Header.js";
-import Filters from "";
-import 
+import PhotographerSection from "./PhotographerSection.js";
+import PortfolioSection from "./PortfolioSection.js";
 
 class Page {
   constructor(photographer, portfolio) {
     this.photographer = photographer;
     this.portfolio = portfolio;
-  }
-
-  render() {}
-}
-
-/*
-import Header from "../../components/Header.js";
-import CardsGrid from "../../components/CardsGrid.js";
-import PhotographerTemplate from "../../components/photographerCard.js";
-
-class Page {
-  constructor(pageData) {
-    this.pageData = pageData;
-    this.page = document.querySelector(".home-page");
+    this.page = document.querySelector(".photographer-page");
     this.main = document.createElement("main");
     this.main.classList.add("main");
     this.header = new Header();
@@ -27,14 +14,13 @@ class Page {
 
   render() {
     this.page.appendChild(this.header.render());
-    const section = document.createElement("section");
-    section.classList.add("photographers");
-    section.appendChild(
-      new CardsGrid(this.pageData, new PhotographerTemplate()).render()
+    this.main.appendChild(new PhotographerSection(this.photographer).render());
+    this.main.appendChild(
+      new PortfolioSection(this.portfolio, this.photographer).render()
     );
-    this.main.appendChild(section);
     this.page.appendChild(this.main);
+    return this.page;
   }
 }
 
-export default Page;*/
+export default Page;

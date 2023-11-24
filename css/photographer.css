@@ -2,12 +2,12 @@
     display: none;
 }
 
-.photographer_section {
+.photographer {
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.photographer_section .wrapper {
+.photographer .wrapper {
     background-color: #FAFAFA;
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,7 @@
     padding-top: 20px;
 }
 
-.photographer_section h1 {
+.photographer h1 {
     color: #D3573C;
     font-size: 64px;
     font-weight: 400;
@@ -29,23 +29,23 @@
     white-space: nowrap;
 }
 
-.photographer_section p {
+.photographer p {
     display: flex;
     flex-direction: column;
 }
 
-.photographer_section .location {
+.photographer .location {
     color: #901C1C;
     font-size: 24px;
     margin-bottom: 25px;
 }
 
-.photographer_section .moto {
+.photographer .moto {
     color: #525252;
     font-size: 18px;
 }
 
-.photographer_section img {
+.photographer img {
     border-radius: 50%;
     height: 200px;
     width: 200px;
@@ -65,18 +65,18 @@
     cursor: pointer;
 }
 
-.photographer_section .container {
+.photographer .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 50%;
 }
 
-.photographer_section .wrapper div:first-child {
+.photographer .wrapper div:first-child {
     margin-bottom: 40px;
 }
 
-.photographer_section .contact_button:hover, .contact_button:focus {
+.photographer .contact_button:hover, .contact_button:focus {
     color: black;
     background-color: #DB8876;
 }
@@ -169,7 +169,7 @@
     display: none;
 }
 
-.portfolio_section {
+.portfolio .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     margin-bottom: 100px;
@@ -180,24 +180,24 @@
 }
 
 
-.portfolio_section figure {
+.portfolio figure {
     margin: 0;
 }
-.portfolio_section img {
+.portfolio img {
     width: 100%;
     height: 350px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.portfolio_section video {
+.portfolio video {
     width: 100%;
     height: 350px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.portfolio_section .text_container {
+.portfolio .text-container {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -205,7 +205,7 @@
     margin-top: 7px;
 }
 
-.portfolio_section .text_container h3 {
+.portfolio .text-container h3 {
     margin: 0;
     font-weight: 300;
     font-size: 24px;
@@ -215,25 +215,26 @@
     max-width: 90%;
 }
 
-.portfolio_section .text_container span {
+.text-container .likes {
     display: flex;
     align-items: center;
     font-size: 1.5em;
     font-weight: bold;
 }
 
-.portfolio_section .heart {
+.portfolio .text-container button {
+    all: initial;
+    cursor: pointer;
+}
+
+.portfolio .heart {
     margin-left: 5px;
     width: 25px;
     height: 25px;
     fill: #901C1C;
 }
 
-.portfolio_section .text_container img {
-    height: 30px;
-    width: 30px;
-    object-fit: cover;
-}
+
 
 .likes {
     display: flex;
@@ -339,30 +340,30 @@ form input {
 }
 
 @media (max-width: 1200px) {
-    .photographer_section .container {
+    .photographer .container {
         flex-direction: column-reverse;
         width: 20%;
     }
 }
 
 @media (max-width: 1000px) {
-    .photographer_section h1 {
+    .photographer h1 {
         white-space: normal;
     }
 }
 
 @media (max-width: 800px) {
 
-    .photographer_section .wrapper {
+    .photographer .wrapper {
         flex-direction: column;
     }
     
-    .photographer_section .wrapper div:first-child {
+    .photographer .wrapper div:first-child {
         width: 100%;
         text-align: center;
     }
     
-    .photographer_section h1 {
+    .photographer h1 {
         margin-right: 0;
     }
 }
