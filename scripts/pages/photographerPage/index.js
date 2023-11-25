@@ -16,6 +16,7 @@ async function init() {
   const photographer = photographers.find((p) => p.id == parseInt(id));
   const photographerPage = new Page(photographer, portfolio);
   photographerPage.render();
+  photographerPage.listenForUpdate();
 }
 
 document.addEventListener("DOMContentLoaded", function () {

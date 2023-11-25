@@ -1,6 +1,5 @@
 import Header from "../../components/Header.js";
-import CardsGrid from "../../components/CardsGrid.js";
-import PhotographerCard from "../../components/PhotographerCard.js";
+import PhotographersGrid from "../../components/cardsGrid/PhotographersGrid.js";
 
 class Page {
   constructor(pageData) {
@@ -15,9 +14,7 @@ class Page {
     this.page.appendChild(this.header.render());
     const section = document.createElement("section");
     section.classList.add("photographers");
-    section.appendChild(
-      new CardsGrid(this.pageData, new PhotographerCard()).render()
-    );
+    section.appendChild(new PhotographersGrid(this.pageData).render());
     this.main.appendChild(section);
     this.page.appendChild(this.main);
   }

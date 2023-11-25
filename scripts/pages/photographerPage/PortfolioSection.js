@@ -1,6 +1,6 @@
-import CardsGrid from "../../components/CardsGrid.js";
-import PortfolioCard from "../../components/PortfolioCard.js";
+import PortfolioGrid from "../../components/cardsGrid/PortfolioGrid.js";
 import StickyFooter from "../../components/StickyFooter.js";
+import SortBtnDropdown from "../../components/SortBtnDropdown.js";
 
 class PortfolioSection {
   constructor(portfolio, photographer) {
@@ -8,7 +8,14 @@ class PortfolioSection {
     this.photographer = photographer;
     this.compEl = document.createElement("section");
     this.compEl.classList.add("portfolio");
-    this.portfolioCard = new PortfolioCard(this.updateTotal); // faire passer les méthodes dans PortfolioCard
+    this.sortBtnDropdown = new SortBtnDropdown(
+      this.updateGrid.bind(this),
+      this.portfolio
+    );
+    this.portfolioGrid = new PortfolioGrid(
+      this.portfolio,
+      this.update.bind(this)
+    );
     this.stickyFooter = new StickyFooter(
       this.photographer.price,
       this.countTotal()
@@ -16,39 +23,27 @@ class PortfolioSection {
   }
 
   render() {
-    this.compEl.appendChild(
-      new CardsGrid(this.portfolio, this.portfolioCard).render()
-    );
+    this.compEl.appendChild(this.sortBtnDropdown.render());
+    this.compEl.appendChild(this.portfolioGrid.render());
     this.compEl.appendChild(this.stickyFooter.render());
-    this.listenForLike();
     return this.compEl;
-  }
-
-  listenForLike() {
-    this.compEl.addEventListener("click", (event) => {
-      if (event.target.closest(".like-btn svg")) {
-        let previousLikes = event.target.closest(".like-btn").dataset.likes;
-        console.log(previousLikes);
-        let isLiked = false;
-        if (isLiked) {
-          newLikes = previousLikes--;
-        } else {
-          newLikes = previousLikes++;
-        }
-        isLiked = !isLiked;
-        this.portfolioCard.updateCount(newLikes);
-      }
-    });
   }
 
   countTotal() {
     return this.portfolio.reduce((sum, media) => sum + media.likes, 0);
   }
 
-  updateTotal() {
-    this.countTotal();
-    this.portfolioCard.updateTotal();
-    this.stickyFooter.updateTotal();
+  update() {
+    const newCount = this.countTotal();
+    this.stickyFooter.updateTotal(newCount);
+  }
+
+  updateGrid(sortedPortfolio) {
+    const portfolioGrid = document.querySelector(".grid");
+    portfolioGrid.remove();
+    this.compEl.appendChild(
+      new PortfolioGrid(sortedPortfolio, this.update.bind(this)).render()
+    );
   }
 }
 

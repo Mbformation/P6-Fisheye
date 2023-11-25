@@ -24,7 +24,7 @@ class PhotographerBanner {
     const container = document.createElement("div");
     container.classList.add("container");
     const btnElement = document.createElement("button");
-    btnElement.classList.add("contact_button");
+    btnElement.classList.add("contact-button");
     btnElement.textContent = "Contactez-moi";
 
     const imgElement = document.createElement("img");

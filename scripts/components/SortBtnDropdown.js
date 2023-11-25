@@ -1,0 +1,94 @@
+class SortBtnDropdown {
+  constructor(updateGrid, portfolio) {
+    this.updateGrid = updateGrid;
+    this.portfolio = portfolio;
+    this.compEl = document.createElement("div");
+    this.compEl.classList.add("sort-btn");
+    this.currentBtn = document.createElement("button");
+    this.currentBtn.classList.add("current-option");
+    this.currentText = document.createElement("span");
+    this.currentText.classList.add("current-title");
+    this.currentText.textContent = "Popularité";
+    this.currentBtn.appendChild(this.currentText);
+    this.currentBtn.innerHTML += `<svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg>`;
+    this.listContainer = document.createElement("div");
+    this.listContainer.classList.add("sort-option-list", "hide");
+    this.btnPop = document.createElement("button");
+    this.btnPop.classList.add("sort-option");
+    this.btnPop.textContent = "Popularité";
+    this.btnPop.innerHTML += `<svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg>`;
+    this.btnDate = document.createElement("button");
+    this.btnDate.classList.add("sort-option");
+    this.btnDate.textContent = "Date";
+    this.btnTitle = document.createElement("button");
+    this.btnTitle.classList.add("sort-option");
+    this.btnTitle.textContent = "Titre";
+    this.btnOptions = [this.btnPop, this.btnDate, this.btnTitle];
+    this.openDropdown();
+    this.selectOption();
+  }
+  render() {
+    const sortTitle = document.createElement("span");
+    sortTitle.classList.add("sort-title");
+    sortTitle.textContent = "Trier par";
+    const optionsWrapper = document.createElement("div");
+    optionsWrapper.classList.add("options-wrapper");
+    this.listContainer.appendChild(this.btnPop);
+    this.listContainer.appendChild(this.btnDate);
+    this.listContainer.appendChild(this.btnTitle);
+    optionsWrapper.appendChild(this.currentBtn);
+    optionsWrapper.appendChild(this.listContainer);
+    this.compEl.appendChild(sortTitle);
+    this.compEl.appendChild(optionsWrapper);
+    return this.compEl;
+  }
+
+  openDropdown() {
+    this.currentBtn.addEventListener("click", () => {
+      this.listContainer.classList.remove("hide");
+      this.currentBtn.classList.add("hide");
+    });
+  }
+
+  selectOption() {
+    this.btnOptions.forEach((button) => {
+      button.addEventListener("click", () => {
+        switch (button.textContent) {
+          case "Popularité":
+            this.portfolio.sort((a, b) => b.likes - a.likes);
+            break;
+          case "Date":
+            this.portfolio.sort((a, b) => new Date(b.date) - new Date(a.date));
+            break;
+          case "Titre":
+            this.portfolio.sort((a, b) => {
+              if (a.title < b.title) {
+                return -1;
+              }
+              if (a.title > b.title) {
+                return 1;
+              }
+              return 0;
+            });
+            break;
+          default:
+            break;
+        }
+        this.updateGrid(this.portfolio);
+        this.currentText.textContent = button.textContent;
+        this.currentBtn.replaceChild(
+          this.currentText,
+          this.currentBtn.firstChild
+        );
+        this.closeDropdown();
+      });
+    });
+  }
+
+  closeDropdown() {
+    this.listContainer.classList.add("hide");
+    this.currentBtn.classList.remove("hide");
+  }
+}
+
+export default SortBtnDropdown;

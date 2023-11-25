@@ -1,9 +1,11 @@
-class CardsGrid {
-  constructor(cardsData, template) {
+import PhotographerCard from "../PhotographerCard.js";
+
+class PhotographersGrid {
+  constructor(cardsData) {
     this.cardsData = cardsData;
-    this.template = template;
     this.cardsContainer = document.createElement("div");
     this.cardsContainer.classList.add("grid");
+    this.template = new PhotographerCard();
   }
   render() {
     this.cardsData.forEach((cardData) => {
@@ -13,4 +15,4 @@ class CardsGrid {
   }
 }
 
-export default CardsGrid;
+export default PhotographersGrid;
