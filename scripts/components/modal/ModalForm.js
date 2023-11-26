@@ -12,7 +12,7 @@ class ModalForm extends ModalModel {
   render() {
     const modalHeader = this.modal.querySelector(".modal-header");
     const title = document.createElement("h2");
-    title.textContent = `Contactez-moi ${this.photographerName}`;
+    title.innerHTML = `Contactez-moi <br>${this.photographerName}`;
     modalHeader.appendChild(title);
 
     return this.modal;

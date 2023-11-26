@@ -43,6 +43,7 @@ class FormInput {
       this.removeError();
 
       if (!this.isValid()) {
+        this.removeError();
         this.createError();
       }
     });
@@ -50,6 +51,7 @@ class FormInput {
 
   isValid() {
     if (this.isRequired && (!this.value || this.value.length === 0)) {
+      this.removeError();
       return false;
     }
 

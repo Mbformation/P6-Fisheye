@@ -25,6 +25,10 @@ class Form {
   submit() {
     if (!this.isValid()) {
       alert("error");
+      const errorEl = document.querySelector(".error-message");
+      if (errorEl) {
+        errorEl.remove();
+      }
       return;
     }
 

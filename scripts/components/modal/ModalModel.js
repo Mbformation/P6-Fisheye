@@ -5,6 +5,7 @@ class ModalModel {
 
   render() {
     this.compEl.classList.add("modal", this.className);
+    document.body.style.overflow = "hidden";
     const wrapperEl = document.createElement("div");
     wrapperEl.classList.add("modal-content");
     const modalHeader = document.createElement("div");
@@ -14,6 +15,7 @@ class ModalModel {
     closeBtn.innerHTML = `<svg class="cross" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg"><path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill=Currentcolor></svg>`;
     closeBtn.addEventListener("click", () => {
       this.compEl.remove();
+      document.body.style.overflow = "";
     });
     modalHeader.appendChild(closeBtn);
     wrapperEl.appendChild(modalHeader);
