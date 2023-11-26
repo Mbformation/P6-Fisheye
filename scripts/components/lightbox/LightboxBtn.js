@@ -7,7 +7,7 @@ class SlideBtn {
   }
   render() {
     const slideBtnEl = document.createElement("button");
-    slideBtnEl.classList.add("lightbox_btn");
+    slideBtnEl.classList.add("lightbox-btn");
     let path = "";
     if (this.direction === +1) {
       path =

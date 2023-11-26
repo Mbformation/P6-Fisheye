@@ -188,6 +188,7 @@
     height: 350px;
     object-fit: cover;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .portfolio video {
@@ -195,6 +196,7 @@
     height: 350px;
     object-fit: cover;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .portfolio .text-container {
@@ -283,6 +285,9 @@
     margin-left: 40px;
 }
 
+/* MODAL GENERIC*/
+
+
 .modal {
     width: 100vw;
     height: 100vh;
@@ -290,7 +295,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: white;
 }
 
 .modal button {
@@ -298,7 +302,7 @@
     cursor: pointer;
 }
 
-.modal button.close_modal {
+.modal button .close-modal {
     width: 30px;
 }
 
@@ -307,26 +311,45 @@
     color: #911C1C;
   }
 
-.lightbox_wrapper {
+.modal-lightbox {
+    background-color: rgba(250, 250, 250, 0.9);
+
+}
+
+.modal-lightbox .modal-content {
+    margin-left: 160px;
+    margin-right: 160px;
+}
+
+.modal-lightbox .modal-header {
+    position: relative;
+}
+
+.modal-lightbox .close-modal {
+    position: absolute;
+    right: 0;
+    transform: translate(-125px, 50px);
+}
+
+.lightbox-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-.lightbox_wrapper button {
+.lightbox-wrapper button {
     padding-left: 40px;
     padding-right: 40px;
     width: 40px;
     height: 50px;
 }
 
-.lightbox_btn svg {
+.lightbox-btn svg {
     width: 100%;
     height: 100%;
     color: #911C1C;
 }
 
-  .slide_container {
+  .slide-container {
     margin-top: 30px;
     overflow: hidden;
     height: 700px;
@@ -337,23 +360,33 @@
     border-radius: 5px;
 }
 
-.previous_media, .current_media, .next_media {
+.media-slider .media-name {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    font-weight: normal;
+    color: #901C1C;
+}
+
+.previous-media, .current-media, .next-media {
     min-width: 900px;
     height: 100%;
     object-fit: cover;
 }
 
-.current_media {
+.current-media {
     position: relative;
 }
 
 
-.modal_form {
-    background-color: transparent;
 
+/* MODAL FORM */
+
+.modal-form {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal_form .modal-content {
+.modal-form .modal-content {
     display: flex;
     flex-direction: column;
     background-color: #DB8876;
@@ -368,27 +401,28 @@
     height: auto;
 }
 
-.modal_form .modal-content .modal-header {
+.modal-form .modal-content .modal-header {
     width: 100%;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 
-.modal_form h2 {
+.modal-form h2 {
     max-width: 450px;
     font-size: 50px;
     font-weight: normal;
     margin: 0;
 }
 
-.modal_form button.close_modal {
+.modal-form button.close-modal {
     width: 30px;
     margin-left: 20px;
     align-self: flex-start;
     margin-top: 20px;
 }
 
-.modal_form .cross {
+.modal-form .cross {
     color: white;
 }
 
@@ -406,7 +440,7 @@ form label {
     margin-bottom: 5px;
 }
 
-form .inputs_wrapper {
+form .inputs-wrapper {
     width: 100%;
     margin-bottom: 26px;
 }
@@ -420,6 +454,7 @@ form input {
 }
 
 form textarea {
+    font-family: "DM Sans", sans-serif;
     width: 100%;
     border-radius: 5px;
     font-size: 20px;
@@ -433,7 +468,7 @@ form div .right {
     color: black;
 }
 
-form .contact_button {
+form .contact-button {
     background-color: #901C1C;
     padding-left: 30px;
     padding-right: 30px;
@@ -446,10 +481,17 @@ form .contact_button {
     margin-top: 20px;
 }
 
-form .contact_button:hover, .contact_button:focus {
+form .contact-button:hover, .contact-button:focus {
     background-color: green;
 }
 
+
+@media (max-width: 1200px) {
+    .photographer .container {
+        flex-direction: column-reverse;
+        width: 20%;
+    }
+}
 
 @media (max-width: 1200px) {
     .photographer .container {

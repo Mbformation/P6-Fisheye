@@ -5,7 +5,7 @@ class SubmitBtn {
   }
 
   render() {
-    this.componentEl.classList.add("submit_btn");
+    this.componentEl.classList.add("submit-btn");
     this.componentEl.type = "submit";
     this.componentEl.textContent = "Envoyer";
 

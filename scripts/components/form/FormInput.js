@@ -9,7 +9,7 @@ class FormInput {
 
   render() {
     const wrapper = document.createElement("div");
-    wrapper.classList.add("field_wrapper");
+    wrapper.classList.add("field-wrapper");
 
     const label = document.createElement("label");
     label.setAttribute("for", this.id);
@@ -60,7 +60,7 @@ class FormInput {
     const wrapper = document.createElement("div");
     wrapper.classList.add("error-message");
     wrapper.textContent = "Veuillez renseigner une réponse valide";
-    this.el.closest(".field_wrapper").appendChild(wrapper);
+    this.el.closest(".field-wrapper").appendChild(wrapper);
   }
 
   removeError() {

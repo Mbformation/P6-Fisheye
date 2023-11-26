@@ -15,7 +15,7 @@ class Form {
 
   render() {
     const componentEl = document.createElement("form");
-    componentEl.classList.add("contact_form");
+    componentEl.classList.add("contact-form");
     const inputsEl = this.renderInputs();
     componentEl.appendChild(inputsEl);
     componentEl.appendChild(this.submitBtn);
@@ -52,7 +52,7 @@ class Form {
 
   renderInputs() {
     const el = document.createElement("div");
-    el.classList.add("inputs_wrapper");
+    el.classList.add("inputs-wrapper");
 
     this.fields.forEach((field) => {
       const fieldEl = field.render();

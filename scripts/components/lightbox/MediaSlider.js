@@ -1,32 +1,42 @@
 class MediaSlider {
-  constructor(previousSlideEl, currentSlideEl, nextSlideEl) {
+  constructor(previousSlideEl, currentSlideEl, nextSlideEl, currentSlideName) {
     this.previousSlideEl = previousSlideEl;
-    this.previousSlideEl.classList.add("previous_media");
+    this.previousSlideEl.classList.add("previous-media");
     this.currentSlideEl = currentSlideEl;
-    this.currentSlideEl.classList.add("current_media");
+    this.currentSlideEl.classList.add("current-media");
     this.nextSlideEl = nextSlideEl;
-    this.nextSlideEl.classList.add("next_media");
-    this.slideContainer = document.createElement("div");
-    this.slideContainer.classList.add("slide_container");
+    this.nextSlideEl.classList.add("next-media");
+    this.currentSlideName = currentSlideName;
+    this.compEl = document.createElement("div");
+    this.compEl.classList.add("media-slider");
+    this.slidesContainer = document.createElement("div");
+    this.slidesContainer.classList.add("slide-container");
   }
 
   render() {
-    this.slideContainer.appendChild(this.previousSlideEl);
-    this.slideContainer.appendChild(this.currentSlideEl);
-    this.slideContainer.appendChild(this.nextSlideEl);
-    return this.slideContainer;
+    this.slidesContainer.appendChild(this.previousSlideEl);
+    this.slidesContainer.appendChild(this.currentSlideEl);
+    this.slidesContainer.appendChild(this.nextSlideEl);
+    this.compEl.appendChild(this.slidesContainer);
+    this.compEl.appendChild(this.currentSlideName);
+    return this.compEl;
   }
 
-  update(previousSlideEl, currentSlideEl, nextSlideEl) {
-    previousSlideEl.classList.add("previous_media");
-    currentSlideEl.classList.add("current_media");
-    nextSlideEl.classList.add("next_media");
-    while (this.slideContainer.firstChild) {
-      this.slideContainer.removeChild(this.slideContainer.firstChild);
+  update(previousSlideEl, currentSlideEl, nextSlideEl, currentSlideName) {
+    while (this.slidesContainer.firstChild) {
+      this.slidesContainer.removeChild(this.slidesContainer.firstChild);
     }
-    this.slideContainer.appendChild(previousSlideEl);
-    this.slideContainer.appendChild(currentSlideEl);
-    this.slideContainer.appendChild(nextSlideEl);
+    while (this.compEl.firstChild) {
+      this.compEl.removeChild(this.compEl.firstChild);
+    }
+    previousSlideEl.classList.add("previous-media");
+    currentSlideEl.classList.add("current-media");
+    nextSlideEl.classList.add("next-media");
+    this.slidesContainer.appendChild(previousSlideEl);
+    this.slidesContainer.appendChild(currentSlideEl);
+    this.slidesContainer.appendChild(nextSlideEl);
+    this.compEl.appendChild(this.slidesContainer);
+    this.compEl.appendChild(currentSlideName);
   }
 }
 

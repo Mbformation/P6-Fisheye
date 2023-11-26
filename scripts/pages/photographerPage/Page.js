@@ -38,14 +38,15 @@ class Page {
         }
         this.page.appendChild(
           new ModalLightbox(
-            new Lightbox(portfolioData, selectedIndex).render()
+            new Lightbox(portfolioData, selectedIndex).render(),
+            "modal-lightbox"
           ).render()
         );
       } else if (event.target.closest(".contact-button")) {
         this.page.appendChild(
           new ModalForm(
             new Form().render(),
-            "modal_form",
+            "modal-form",
             this.photographer.name
           ).render()
         );
