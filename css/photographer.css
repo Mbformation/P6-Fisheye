@@ -348,6 +348,50 @@
 }
 
 
+.modal_form {
+    background-color: transparent;
+
+}
+
+.modal_form .modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #DB8876;
+    max-width: 500px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: auto;
+}
+
+.modal_form .modal-content .modal-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal_form h2 {
+    max-width: 450px;
+    font-size: 50px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.modal_form button.close_modal {
+    width: 30px;
+    margin-left: 20px;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.modal_form .cross {
+    color: white;
+}
+
 form {
     display: flex;
     width: 100%;
@@ -357,23 +401,55 @@ form {
 
 form label {
     color: #312E2E;
-    font-size: 25px;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
-form div {
-    display: flex;
-    flex-direction: column;
+form .inputs_wrapper {
     width: 100%;
-    align-items: self-start;
     margin-bottom: 26px;
 }
 
 form input {
     width: 100%;
-    height: 68px;
+    height: 50px;
     border: none;
     border-radius: 5px;
+    font-size: 20px;
 }
+
+form textarea {
+    width: 100%;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+form div .wrong {
+    color: red;
+}
+
+form div .right {
+    color: black;
+}
+
+form .contact_button {
+    background-color: #901C1C;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+form .contact_button:hover, .contact_button:focus {
+    background-color: green;
+}
+
 
 @media (max-width: 1200px) {
     .photographer .container {

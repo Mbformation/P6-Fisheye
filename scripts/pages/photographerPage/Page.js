@@ -3,6 +3,8 @@ import PhotographerSection from "./PhotographerSection.js";
 import PortfolioSection from "./PortfolioSection.js";
 import ModalLightbox from "../../components/modal/ModalLightbox.js";
 import Lightbox from "../../components/lightbox/Lightbox.js";
+import ModalForm from "../../components/modal/ModalForm.js";
+import Form from "../../components/form/Form.js";
 
 class Page {
   constructor(photographer, portfolio) {
@@ -41,11 +43,11 @@ class Page {
         );
       } else if (event.target.closest(".contact-button")) {
         this.page.appendChild(
-          renderModal(
-            new Form(this.photographer.name).render(),
+          new ModalForm(
+            new Form().render(),
             "modal_form",
-            photographer.name
-          )
+            this.photographer.name
+          ).render()
         );
       }
     });
