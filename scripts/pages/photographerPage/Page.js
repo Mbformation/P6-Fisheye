@@ -29,7 +29,10 @@ class Page {
   listenForUpdate() {
     this.page.addEventListener("click", (event) => {
       let el = event.target;
-      if (event.target.nodeName == "IMG") {
+      if (
+        event.target.nodeName === "IMG" ||
+        event.target.nodeName === "VIDEO"
+      ) {
         el = event.target.closest("a");
       }
 

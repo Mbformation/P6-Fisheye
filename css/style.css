@@ -1,19 +1,14 @@
 @import url("photographer.css");
 
 
+/* CODE GENERAL ET DE LA PAGE D'ACCUEIL*/
+
+/*Général */
+
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0 auto;
     max-width: 1400px;
-}
-
-
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
 }
 
 a:focus-visible {
@@ -32,6 +27,18 @@ textarea:focus-visible {
     outline: 3px solid #901C1C;
 }
 
+
+/*Le header*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+
 h1 {
     color: #901C1C;
     margin-right: 50px;
@@ -42,6 +49,9 @@ h1 {
     height: 50px;
     padding-left: 50px;
 }
+
+
+/*Section photographers*/
 
 .photographers .grid {
     display: grid;
@@ -97,4 +107,29 @@ h1 {
 .photographers .price {
     color: #757575;
     font-size: 15px;
+}
+
+@media (max-width: 1000px) {
+    .photographers .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .logo {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    .photographers .grid {
+        grid-template-columns: 1fr;
+    }
 }
