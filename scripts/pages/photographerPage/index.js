@@ -3,9 +3,7 @@ import getFromJson from "./../../utils/getFromJson.js";
 import Page from "./Page.js";
 
 async function init() {
-  const { photographers, media } = await getFromJson(
-    "/data/photographers.json"
-  );
+  const { photographers, media } = await getFromJson("data/photographers.json");
   const id = getId("id");
   const portfolio = media
     .filter((p) => p.photographerId == parseInt(id))
