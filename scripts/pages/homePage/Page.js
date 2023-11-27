@@ -1,4 +1,4 @@
-import Header from "../../components/Header.js";
+import HeaderHome from "../../components/header/HeaderHome.js";
 import PhotographersGrid from "../../components/cardsGrid/PhotographersGrid.js";
 
 class Page {
@@ -7,7 +7,7 @@ class Page {
     this.page = document.querySelector(".home-page");
     this.main = document.createElement("main");
     this.main.classList.add("main");
-    this.header = new Header();
+    this.header = new HeaderHome();
   }
 
   render() {

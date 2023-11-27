@@ -25,10 +25,11 @@ class PhotographerBanner {
     container.classList.add("container");
     const btnElement = document.createElement("button");
     btnElement.classList.add("contact-button");
+    btnElement.setAttribute("aria-label", `Contactez le photographe ${name}`);
     btnElement.textContent = "Contactez-moi";
-
     const imgElement = document.createElement("img");
     imgElement.setAttribute("src", picture);
+    imgElement.setAttribute("alt", name);
     container.appendChild(btnElement);
     container.appendChild(imgElement);
     banner.appendChild(textContainer);

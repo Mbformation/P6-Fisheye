@@ -1,4 +1,4 @@
-import Header from "./../../components/Header.js";
+import Header from "../../components/header/HeaderModel.js";
 import PhotographerSection from "./PhotographerSection.js";
 import PortfolioSection from "./PortfolioSection.js";
 import ModalLightbox from "../../components/modal/ModalLightbox.js";

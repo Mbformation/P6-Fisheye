@@ -5,7 +5,8 @@ class PhotographerCard {
     const cardContainer = document.createElement("article");
     const link = document.createElement("a");
     link.href = `photographer.html?id=${id}`;
-    link.innerHTML = `<img src="${picture}"/> <h2>${name}</h2>`;
+    link.setAttribute("tabindex", "0");
+    link.innerHTML = `<img src="${picture}"/> <h2 arria-label="${name}">${name}</h2>`;
     const details = document.createElement("p");
     details.innerHTML = `<span class="location">${city}, ${country}</span>
         <span class="moto">${tagline}</span>
