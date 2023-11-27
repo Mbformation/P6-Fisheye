@@ -229,15 +229,17 @@
     cursor: pointer;
 }
 
-.portfolio .heart {
-    padding: 5px;
+.portfolio .grid svg {
     margin-left: 5px;
-    width: 20px;
-    height: 20px;
-    fill: #901C1C;
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke-width: 3px;
+    stroke:#911C1C;
 }
 
-.portfolio .heart-filled {
+.portfolio .grid svg.heart-filled {
+    fill: #911C1C;
 }
 
 .likes {
