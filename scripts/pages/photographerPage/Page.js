@@ -41,12 +41,11 @@ class Page {
         if (currentModal) {
           currentModal.remove();
         }
+        const lightbox = new Lightbox(portfolioData, selectedIndex);
         this.page.appendChild(
-          new ModalLightbox(
-            new Lightbox(portfolioData, selectedIndex).render(),
-            "modal-lightbox"
-          ).render()
+          new ModalLightbox(lightbox.render(), "modal-lightbox").render()
         );
+        document.querySelector(".previous").focus();
       } else if (event.target.closest(".contact-button")) {
         const form = new Form();
         this.page.appendChild(
