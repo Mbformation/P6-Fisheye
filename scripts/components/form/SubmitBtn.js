@@ -10,7 +10,7 @@ class SubmitBtn {
     this.componentEl.textContent = "Envoyer";
 
     this.submit();
-    this.listenFocus();
+    this.focusToClose();
     return this.componentEl;
   }
 
@@ -21,7 +21,7 @@ class SubmitBtn {
     });
   }
 
-  listenFocus() {
+  focusToClose() {
     this.componentEl.addEventListener("keydown", function (event) {
       if (event.key === "Tab" && !event.shiftKey) {
         event.preventDefault();
