@@ -35,7 +35,7 @@ class PortfolioCard {
       portfolioData: this.portfolio,
       selectedIndex: this.index,
     };
-    mediaEl.dataset.lightboxData = JSON.stringify(lightboxData);
+    anchorEl.dataset.lightboxData = JSON.stringify(lightboxData);
 
     mediaCardContainer.appendChild(anchorEl);
     const textContainer = document.createElement("div");
@@ -61,7 +61,7 @@ class PortfolioCard {
         this.item.likes++;
       }
       this.isLiked = !this.isLiked;
-      event.target.closest("svg").classList.toggle("heart-filled");
+      this.btn.querySelector("svg").classList.toggle("heart-filled");
       this.total.textContent = `${this.item.likes}`;
       this.updateTotal();
     });

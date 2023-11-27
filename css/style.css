@@ -16,6 +16,22 @@ header {
     height: 90px;
 }
 
+a:focus-visible {
+    outline: 3px solid  #D3573C;
+}
+
+button:focus-visible {
+    outline: 3px solid  #D3573C;
+}
+
+input:focus-visible {
+    outline: 3px solid #901C1C;
+}
+
+textarea:focus-visible {
+    outline: 3px solid #901C1C;
+}
+
 h1 {
     color: #901C1C;
     margin-right: 50px;

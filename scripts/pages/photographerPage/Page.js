@@ -28,9 +28,14 @@ class Page {
 
   listenForUpdate() {
     this.page.addEventListener("click", (event) => {
-      if (event.target.closest(".lightbox-mode")) {
+      let el = event.target;
+      if (event.target.nodeName == "IMG") {
+        el = event.target.closest("a");
+      }
+
+      if (el.classList.contains("lightbox-mode")) {
         const { portfolioData, selectedIndex } = JSON.parse(
-          event.target.dataset.lightboxData
+          el.dataset.lightboxData
         );
         const currentModal = document.querySelector(".modal");
         if (currentModal) {
@@ -43,13 +48,15 @@ class Page {
           ).render()
         );
       } else if (event.target.closest(".contact-button")) {
+        const form = new Form();
         this.page.appendChild(
           new ModalForm(
-            new Form().render(),
+            form.render(),
             "modal-form",
             this.photographer.name
           ).render()
         );
+        form.fields[0].el.querySelector("input").focus();
       }
     });
   }

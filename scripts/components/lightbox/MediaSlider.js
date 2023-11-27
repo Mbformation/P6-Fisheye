@@ -14,6 +14,7 @@ class MediaSlider {
   }
 
   render() {
+    this.addControlsAttribute(this.currentSlideEl);
     this.slidesContainer.appendChild(this.previousSlideEl);
     this.slidesContainer.appendChild(this.currentSlideEl);
     this.slidesContainer.appendChild(this.nextSlideEl);
@@ -32,11 +33,17 @@ class MediaSlider {
     previousSlideEl.classList.add("previous-media");
     currentSlideEl.classList.add("current-media");
     nextSlideEl.classList.add("next-media");
+    this.addControlsAttribute(currentSlideEl);
     this.slidesContainer.appendChild(previousSlideEl);
     this.slidesContainer.appendChild(currentSlideEl);
     this.slidesContainer.appendChild(nextSlideEl);
     this.compEl.appendChild(this.slidesContainer);
     this.compEl.appendChild(currentSlideName);
+  }
+  addControlsAttribute(element) {
+    if (element instanceof HTMLVideoElement) {
+      element.setAttribute("controls", "");
+    }
   }
 }
 

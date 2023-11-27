@@ -10,7 +10,7 @@ class SubmitBtn {
     this.componentEl.textContent = "Envoyer";
 
     this.submit();
-
+    this.listenFocus();
     return this.componentEl;
   }
 
@@ -18,6 +18,16 @@ class SubmitBtn {
     this.componentEl.addEventListener("click", (event) => {
       event.preventDefault();
       this.form.submit();
+    });
+  }
+
+  listenFocus() {
+    this.componentEl.addEventListener("keydown", function (event) {
+      if (event.key === "Tab" && !event.shiftKey) {
+        event.preventDefault();
+        const closeBtn = document.querySelector(".close-modal");
+        closeBtn.focus();
+      }
     });
   }
 }
