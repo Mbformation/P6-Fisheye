@@ -30,10 +30,3 @@ class StickyFooter {
 }
 
 export default StickyFooter;
-
-/*
-const newTotalEl = document.createElement("span");
-newTotalEl.classList.add("total");
-newTotalEl.textContent = `${newTotal}`;
-this.totalEl.replaceWith(newTotalEl);
-this.totalEl = newTotalEl;*/
