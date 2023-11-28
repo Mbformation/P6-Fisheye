@@ -1,5 +1,6 @@
 import PhotographerBanner from "../../components/PhotographerBanner.js";
 
+//Composant section photographe
 class PhotographerSection {
   constructor(photographer) {
     this.photographer = photographer;

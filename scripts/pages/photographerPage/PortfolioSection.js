@@ -2,6 +2,7 @@ import PortfolioGrid from "../../components/cardsGrid/PortfolioGrid.js";
 import StickyFooter from "../../components/StickyFooter.js";
 import SortBtnDropdown from "../../components/SortBtnDropdown.js";
 
+// Coposant section portfolio
 class PortfolioSection {
   constructor(portfolio, photographer) {
     this.portfolio = portfolio;

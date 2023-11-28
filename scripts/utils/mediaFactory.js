@@ -1,3 +1,5 @@
+// Factory qui est utilisée pour créer les élements du dom
+// image ou vidéo. Appelée à la fois dans lightbox et portfolio
 function mediaFactory(item) {
   const { photographerId, image, video } = item;
   const picture = `assets/photographers/${photographerId}/${image}`;

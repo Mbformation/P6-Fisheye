@@ -1,3 +1,5 @@
+// Composant servant de template pour le photographe en section
+// du haut
 class PhotographerBanner {
   constructor(photographer) {
     this.photographer = photographer;

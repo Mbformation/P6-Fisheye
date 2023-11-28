@@ -1,3 +1,5 @@
+// Composant template servant de template pour afficher
+// les cards de chaque photographe en page d'accueil
 class PhotographerCard {
   render(photographer) {
     const { name, portrait, id, city, country, tagline, price } = photographer;

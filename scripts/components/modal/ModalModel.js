@@ -1,3 +1,5 @@
+//Composant modèle pour les modales du formulaire et lightbox
+
 class ModalModel {
   constructor() {
     this.compEl = document.createElement("div");

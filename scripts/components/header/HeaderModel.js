@@ -1,3 +1,5 @@
+// composant modèle de Header
+
 class HeaderModel {
   constructor() {
     this.compEl = document.createElement("header");

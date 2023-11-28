@@ -1,3 +1,5 @@
+// Composant du bouton qui trie les media
+
 class SortBtnDropdown {
   constructor(updateGrid, portfolio) {
     this.updateGrid = updateGrid;
@@ -71,6 +73,7 @@ class SortBtnDropdown {
   }
 
   selectOption() {
+    // Selon le type d'option on applique la règle de tri adéquate
     this.btnOptions.forEach((button) => {
       button.addEventListener("click", () => {
         switch (button.textContent) {

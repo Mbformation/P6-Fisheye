@@ -1,3 +1,5 @@
+// Composant qui reçoit les médias à afficher et cacher
+
 class MediaSlider {
   constructor(previousSlideEl, currentSlideEl, nextSlideEl, currentSlideName) {
     this.previousSlideEl = previousSlideEl;
@@ -48,6 +50,7 @@ class MediaSlider {
     this.compEl.appendChild(currentSlideName);
     this.slidesContainer.appendChild(nextSlideEl);
   }
+  // ajouter attribut controls à l'élement vidéo
   addControlsAttribute(element) {
     if (element instanceof HTMLVideoElement) {
       element.setAttribute("controls", "");

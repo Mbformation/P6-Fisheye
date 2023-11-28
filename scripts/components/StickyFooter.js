@@ -1,3 +1,4 @@
+// Composant qui les information de likes et tarifaires
 class StickyFooter {
   constructor(price, totalLikes) {
     this.price = price;

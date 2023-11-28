@@ -1,8 +1,10 @@
 import FormInput from "./FormInput.js";
 import SubmitBtn from "./SubmitBtn.js";
 
+// Composant Form
 class Form {
   constructor() {
+    //instanciation de chaque composant input
     this.fields = [
       new FormInput("input", "first-name", "Prénom", true),
       new FormInput("input", "last-name", "Nom", true),
@@ -14,6 +16,7 @@ class Form {
   }
 
   render() {
+    // render les inputs et le submit button
     const componentEl = document.createElement("form");
     componentEl.classList.add("contact-form");
     const inputsEl = this.renderInputs();
@@ -23,19 +26,21 @@ class Form {
   }
 
   submit() {
+    // check s'il y avait des messages d'erreur déjà créés pour les enlever
     document.querySelectorAll(".error-message").forEach((e) => {
       e.remove();
     });
+    // check si le formulaire et valide
     if (!this.isValid()) {
       alert("Formulaire incomplet");
       return;
     }
-
+    // crée le payload avec infos des inputs
     const payload = {};
     this.fields.forEach((field) => {
       payload[field.id] = field.value;
     });
-
+    //affiche le payload
     console.log(payload);
   }
 
@@ -44,7 +49,7 @@ class Form {
     let count = 0;
     this.fields.forEach((field) => {
       if (!field.isValid()) {
-        field.createError();
+        field.createError(); // ici on affiche les messages d'erreur
         isValid = false;
         count++;
       }
@@ -54,6 +59,7 @@ class Form {
   }
 
   renderInputs() {
+    // render les différents inputs
     const el = document.createElement("div");
     el.classList.add("inputs-wrapper");
 

@@ -1,5 +1,6 @@
 import PortfolioCard from "../PortfolioCard.js";
 
+// La grille qui contient les cards de media du portfolio
 class PortfolioGrid {
   constructor(cardsData, update) {
     this.cardsData = cardsData;
@@ -10,6 +11,7 @@ class PortfolioGrid {
   }
 
   render() {
+    // itérer sur chaque carte et lui appliquer un template
     this.cardsData.forEach((cardData, index) => {
       const card = new this.template(
         this.update,

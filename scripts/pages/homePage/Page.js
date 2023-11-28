@@ -1,6 +1,8 @@
 import HeaderHome from "../../components/header/HeaderHome.js";
 import PhotographersGrid from "../../components/cardsGrid/PhotographersGrid.js";
 
+// Composant Page qui affiche les différents composants
+// de la page d'accueil: header, main, la section
 class Page {
   constructor(pageData) {
     this.pageData = pageData;

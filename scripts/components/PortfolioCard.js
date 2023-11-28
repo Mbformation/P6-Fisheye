@@ -1,5 +1,7 @@
 import mediaFactory from "../utils/mediaFactory.js";
 
+// Composant servant de template pour une carte d'un media
+// composant qui écoute sur le like pour actualiser l'affichage
 class PortfolioCard {
   constructor(updateTotal, item, portfolio, index) {
     this.updateTotal = updateTotal;

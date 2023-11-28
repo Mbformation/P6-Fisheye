@@ -3,6 +3,7 @@ import MediaSlider from "./MediaSlider.js";
 import mediaFactory from "../../utils/mediaFactory.js";
 import moveIndex from "../../utils/moveIndex.js";
 
+// composant Lightbox
 class Lightbox {
   constructor(portfolio, selectedIndex) {
     this.portfolio = portfolio;
@@ -32,6 +33,7 @@ class Lightbox {
   }
 
   render() {
+    // render les composants enfant
     this.compEl.appendChild(this.previousBtn.render());
     this.compEl.appendChild(this.mediaSlider.render());
     this.compEl.appendChild(this.nextBtn.render());
@@ -39,6 +41,7 @@ class Lightbox {
   }
 
   update() {
+    // actualise l'affichage des médias
     const newCurrentElName = document.createElement("h2");
     newCurrentElName.classList.add("media-name");
     newCurrentElName.textContent = `${this.portfolio[this.currentIndex].title}`;

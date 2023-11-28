@@ -1,3 +1,5 @@
+// cherche une donnée dans l'url
+
 function getUrlData(data) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);

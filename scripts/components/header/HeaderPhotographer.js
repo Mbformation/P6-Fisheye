@@ -1,12 +1,13 @@
-import HeaderPhotographer from "./HeaderModel.js";
+import HeaderModel from "./HeaderModel.js"; // importe le modèle
 
-class HeaderHome extends HeaderPhotographer {
+// Composant HeaderPhotographer qui hérite du modèle
+class HeaderPhotographer extends HeaderModel {
   constructor() {
-    super();
+    super(); // instancie le constructeur du modèle
   }
   render() {
     return super.render();
   }
 }
 
-export default HeaderHome;
+export default HeaderPhotographer;

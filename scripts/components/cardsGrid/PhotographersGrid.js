@@ -1,5 +1,6 @@
 import PhotographerCard from "../PhotographerCard.js";
 
+// La grille qui contient les cards de photographes
 class PhotographersGrid {
   constructor(cardsData) {
     this.cardsData = cardsData;
@@ -8,6 +9,7 @@ class PhotographersGrid {
     this.template = new PhotographerCard();
   }
   render() {
+    // itérer sur chaque carte et lui appliquer un template
     this.cardsData.forEach((cardData) => {
       this.cardsContainer.appendChild(this.template.render(cardData));
     });

@@ -1,3 +1,5 @@
+// Composant modèle pour un input
+
 class FormInput {
   constructor(type, id, text, isRequired = false) {
     (this.type = type), (this.id = id);
@@ -8,6 +10,7 @@ class FormInput {
   }
 
   render() {
+    // render le html de l'input
     const wrapper = document.createElement("div");
     wrapper.classList.add("field-wrapper");
 
@@ -39,9 +42,11 @@ class FormInput {
 
   validateField() {
     this.el.addEventListener("input", (e) => {
+      // écouter l'input
       this.value = e.target.value;
       this.removeError();
 
+      // appeler isValid() et s'il retourne false on génère une erreur
       if (!this.isValid()) {
         this.createError();
       }
@@ -49,13 +54,16 @@ class FormInput {
   }
 
   isValid() {
+    // si l'input est requis alors on check déjà sans regex
     if (this.isRequired && (!this.value || this.value.length === 0)) {
       return false;
     }
-
+    // on check la regex
     return this.getRegex().test(this.value);
   }
 
+  // code de manipulation du dom lorsqu'erreur ou s'il n'y a
+  // plus d'erreur
   createError() {
     const wrapper = document.createElement("div");
     wrapper.classList.add("error-message");
@@ -70,6 +78,7 @@ class FormInput {
     }
   }
 
+  // on récupère la bonne regex en fonction de l'id de l'input
   getRegex() {
     switch (this.id) {
       case "first-name":

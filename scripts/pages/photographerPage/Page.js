@@ -6,6 +6,7 @@ import Lightbox from "../../components/lightbox/Lightbox.js";
 import ModalForm from "../../components/modal/ModalForm.js";
 import Form from "../../components/form/Form.js";
 
+// Composant Page de la page photographer
 class Page {
   constructor(photographer, portfolio) {
     this.photographer = photographer;
@@ -25,7 +26,8 @@ class Page {
     this.page.appendChild(this.main);
     return this.page;
   }
-
+  // Les différents listeners sur la page pour actualiser d'autres
+  // composants
   listenForUpdate() {
     this.page.addEventListener("click", (event) => {
       let el = event.target;

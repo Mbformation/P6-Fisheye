@@ -1,5 +1,7 @@
 import moveIndex from "../../utils/moveIndex.js";
 
+// Composant bouton générique qui en fonction de la direction
+// crée un bouton previous ou next
 class SlideBtn {
   constructor(parentComponent, direction) {
     this.parent = parentComponent;
