@@ -2,10 +2,12 @@ class MediaSlider {
   constructor(previousSlideEl, currentSlideEl, nextSlideEl, currentSlideName) {
     this.previousSlideEl = previousSlideEl;
     this.previousSlideEl.classList.add("previous-media");
+    this.previousSlideEl.classList.add("hidden-slide");
     this.currentSlideEl = currentSlideEl;
     this.currentSlideEl.classList.add("current-media");
     this.nextSlideEl = nextSlideEl;
     this.nextSlideEl.classList.add("next-media");
+    this.nextSlideEl.classList.add("hidden-slide");
     this.currentSlideName = currentSlideName;
     this.compEl = document.createElement("div");
     this.compEl.classList.add("media-slider");
@@ -33,12 +35,14 @@ class MediaSlider {
     previousSlideEl.classList.add("previous-media");
     currentSlideEl.classList.add("current-media");
     nextSlideEl.classList.add("next-media");
+    nextSlideEl.classList.add("hidden-slide");
     this.addControlsAttribute(currentSlideEl);
     this.slidesContainer.appendChild(previousSlideEl);
     this.slidesContainer.appendChild(currentSlideEl);
-    this.slidesContainer.appendChild(nextSlideEl);
+    previousSlideEl.classList.add("hidden-slide");
     this.compEl.appendChild(this.slidesContainer);
     this.compEl.appendChild(currentSlideName);
+    this.slidesContainer.appendChild(nextSlideEl);
   }
   addControlsAttribute(element) {
     if (element instanceof HTMLVideoElement) {

@@ -232,9 +232,17 @@
     font-weight: bold;
 }
 
+.like-btn:focus, .like-btn:focus-visible {
+    outline: 3px solid  #D3573C;
+}
+
+.like-btn {
+    border: none
+}
+
 .portfolio .text-container button {
-    all: initial;
     cursor: pointer;
+    background-color: white;
 }
 
 .portfolio .grid svg {
@@ -324,18 +332,15 @@
 }
 
 .modal-lightbox .modal-content {
-    margin-left: 160px;
-    margin-right: 160px;
-}
-
-.modal-lightbox .modal-header {
+    display: flex;
+    justify-content: center;
     position: relative;
 }
 
 .modal-lightbox .close-modal {
     position: absolute;
-    right: 0;
-    transform: translate(-125px, 50px);
+    right: 20px;
+    top: 20px;
 }
 
 .lightbox-wrapper {
@@ -367,27 +372,26 @@
 
   .slide-container {
     margin-top: 30px;
-    overflow: hidden;
-    height: 700px;
-    width: 900px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-height: 80vh;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .media-slider .media-name {
-    margin: 0;
     padding: 0;
     margin-top: 10px;
     font-weight: normal;
     color: #901C1C;
+    
+}
+
+.hidden-slide{
+    display: none;
 }
 
 .previous-media, .current-media, .next-media {
-    min-width: 900px;
-    height: 100%;
     object-fit: cover;
+    width: 100%;
 }
 
 .current-media {
@@ -557,3 +561,5 @@ form .submit-btn:hover, .submit-btn:focus {
         padding: 0 20px;
     }
 }
+
+

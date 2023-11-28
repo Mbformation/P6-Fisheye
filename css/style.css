@@ -11,19 +11,19 @@ body {
     max-width: 1400px;
 }
 
-a:focus-visible {
+a:focus, a:focus-visible {
     outline: 3px solid  #D3573C;
 }
 
-button:focus-visible {
+button:focus, button:focus-visible {
     outline: 3px solid  #D3573C;
 }
 
-input:focus-visible {
+input:focus, input:focus-visible {
     outline: 3px solid #901C1C;
 }
 
-textarea:focus-visible {
+textarea:focus, textarea:focus-visible {
     outline: 3px solid #901C1C;
 }
 
