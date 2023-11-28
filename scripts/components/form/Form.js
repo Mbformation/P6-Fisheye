@@ -23,12 +23,11 @@ class Form {
   }
 
   submit() {
+    document.querySelectorAll(".error-message").forEach((e) => {
+      e.remove();
+    });
     if (!this.isValid()) {
-      alert("error");
-      const errorEl = document.querySelector(".error-message");
-      if (errorEl) {
-        errorEl.remove();
-      }
+      alert("Formulaire incomplet");
       return;
     }
 
