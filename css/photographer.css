@@ -1,6 +1,6 @@
-#contact-modal {
-    display: none;
-}
+/* PAGE PHOTOGRAPHE */
+
+/*Section photographe*/
 
 .photographer {
     padding-left: 50px;
@@ -80,6 +80,12 @@
     color: black;
     background-color: #DB8876;
 }
+
+
+
+/* Section Portfolio */ 
+
+/* Bouton de tri du portfolio */
 
 .sort-btn {
     padding-top: 30px;
@@ -173,6 +179,10 @@
     display: none;
 }
 
+
+
+/* Portfolio grille et les cards */
+
 .portfolio .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -263,6 +273,9 @@
     align-items: center;
 }
 
+
+/* Sticky Footer */
+
 .sticky-footer {
     display: flex;
     position: fixed;
@@ -300,9 +313,14 @@
     margin-left: 40px;
 }
 
-/* MODAL GENERIC*/
 
 
+
+
+/* MODALES */
+
+
+/* Modale générique */
 .modal {
     width: 100vw;
     height: 100vh;
@@ -325,6 +343,9 @@
     width: 30px;
     color: #911C1C;
   }
+
+
+/* Lightbox et sa modale */
 
 .modal-lightbox {
     background-color: rgba(250, 250, 250, 0.9);
@@ -354,7 +375,6 @@
     width: 40px;
     height: 50px;
 }
-
 
 .lightbox-wrapper button.previous:focus {
     outline: 3px solid #D3573C;
@@ -400,7 +420,8 @@
 
 
 
-/* MODAL FORM */
+/* Formulaire et sa modale */
+
 
 .modal-form {
     background-color: rgba(0, 0, 0, 0.8);
@@ -514,6 +535,8 @@ form .submit-btn:hover, .submit-btn:focus {
     background-color: green;
 }
 
+
+/*Media Queries*/
 
 @media (max-width: 1200px) {
     .photographer .container {

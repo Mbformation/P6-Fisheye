@@ -16,7 +16,7 @@ class FormInput {
     label.textContent = this.text;
 
     const fieldEl = document.createElement(this.type);
-    fieldEl.setAttribute("id", `#${this.id}`);
+    fieldEl.setAttribute("id", `${this.id}`);
 
     switch (this.type) {
       case "input":

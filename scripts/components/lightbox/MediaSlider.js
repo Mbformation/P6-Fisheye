@@ -3,11 +3,13 @@ class MediaSlider {
     this.previousSlideEl = previousSlideEl;
     this.previousSlideEl.classList.add("previous-media");
     this.previousSlideEl.classList.add("hidden-slide");
+    this.previousSlideEl.setAttribute("aria-hidden", "true");
     this.currentSlideEl = currentSlideEl;
     this.currentSlideEl.classList.add("current-media");
     this.nextSlideEl = nextSlideEl;
     this.nextSlideEl.classList.add("next-media");
     this.nextSlideEl.classList.add("hidden-slide");
+    this.nextSlideEl.setAttribute("aria-hidden", "true");
     this.currentSlideName = currentSlideName;
     this.compEl = document.createElement("div");
     this.compEl.classList.add("media-slider");
@@ -34,8 +36,10 @@ class MediaSlider {
     }
     previousSlideEl.classList.add("previous-media");
     currentSlideEl.classList.add("current-media");
+    previousSlideEl.setAttribute("aria-hidden", "true");
     nextSlideEl.classList.add("next-media");
     nextSlideEl.classList.add("hidden-slide");
+    nextSlideEl.setAttribute("aria-hidden", "true");
     this.addControlsAttribute(currentSlideEl);
     this.slidesContainer.appendChild(previousSlideEl);
     this.slidesContainer.appendChild(currentSlideEl);

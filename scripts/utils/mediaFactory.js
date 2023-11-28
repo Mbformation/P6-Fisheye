@@ -6,12 +6,14 @@ function mediaFactory(item) {
 
   if (hasVideo) {
     const videoElement = document.createElement("video");
+    videoElement.setAttribute("alt", `${item.title}`);
     videoElement.src = vid;
 
     return videoElement;
   }
   const imageElement = document.createElement("img");
   imageElement.src = picture;
+  imageElement.setAttribute("alt", `${item.title}`);
 
   return imageElement;
 }

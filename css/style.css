@@ -109,6 +109,8 @@ h1 {
     font-size: 15px;
 }
 
+/*Media Queries*/
+
 @media (max-width: 1000px) {
     .photographers .grid {
         grid-template-columns: 1fr 1fr;

@@ -30,7 +30,10 @@ class PortfolioCard {
     anchorEl.classList.add("lightbox-mode");
     const mediaEl = mediaFactory(this.item);
     anchorEl.appendChild(mediaEl);
-    mediaEl.setAttribute("alt", `${title}, grand format`);
+    anchorEl.setAttribute(
+      "alt",
+      `Visualiser le media ${title} en grand format`
+    );
     const lightboxData = {
       portfolioData: this.portfolio,
       selectedIndex: this.index,
